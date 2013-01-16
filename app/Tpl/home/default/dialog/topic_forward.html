@@ -1,0 +1,11 @@
+<div class="dialog_topic_forward clearfix">
+    <p class="fw_root">{$topic.content}</p>
+    <form id="J_forward_form" action="{:U('topic/forward')}" method="post">
+    <div class="fwpa_tool mt5"><span class="green">还可以输入<b class="green">140</b>个汉字</span></div>
+    <textarea class="J_content fw_content" name="content"></textarea>
+    <div class="fw_submit_box">
+        <input type="submit" class="btn" value="确定" />
+    </div>
+    <input type="hidden" name="tid" value="{$topic.id}" />
+    </form>
+</div>

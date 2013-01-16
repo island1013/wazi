@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<include file="public:head" />
+<css file="__STATIC__/css/default/space.css" />
+</head>
+<body>
+
+<include file="public:header" />
+
+<div class="main_wrap">
+    <include file="top" />
+
+    <div class="user_info_main">
+        <div class="info_title mb20 clearfix">
+            <h1 class="setting_tilte fl">个人信息</h1>
+            <if condition="$visitor['id'] eq $user['id']">
+            <a class="fl setting" href="{:U('user/index')}" target="_blank">设置</a>
+            </if>
+        </div>
+        <dl class="info_detail clearfix">
+            <dd>性别：</dd>
+            <dt><if condition="$user['gender'] eq 0">女<else/>男</if></dt>
+            <dd>地区：</dd>
+            <dt>{$user.province} {$user.city}&nbsp;</dt>
+            <dd>个人标签：</dd>
+            <dt>{$user.tags}&nbsp;</dt>
+            <dd>自我介绍：</dd>
+            <dt><p class="clr6">{$user.intro}&nbsp;</p></dt>
+        </dl>
+    </div>
+
+</div>
+
+<include file="public:footer" />
+</body>
+</html>

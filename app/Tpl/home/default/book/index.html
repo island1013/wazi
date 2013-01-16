@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<include file="public:head" />
+</head>
+<body>
+<include file="public:header" />
+
+<div class="main_wrap">
+    <div class="cate_sort pt10 clearfix">
+        <h3 class="fl">{$tag|default='发现'}</h3>
+        <span class="fl">
+            <em class="fl">排序：</em>
+            <ul class="fl">
+                <li><a href="{:U('book/index', array('sort'=>'hot'))}" <if condition="$sort eq 'hot'">class="current"</if>>最热</a></li>
+                <li><i>|</i></li>
+                <li><a href="{:U('book/index', array('sort'=>'new'))}" <if condition="$sort eq 'new'">class="current"</if>>最新</a></li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="wall_wrap clearfix">
+        <div id="J_waterfall" class="wall_container clearfix" data-uri="__ROOT__/?m=book&a=index_ajax&tag={$tag}&sort={$sort}&p={$p}">
+            <div class="J_item wall_tag">
+                <h3>热门标签：</h3>
+                <div class="tags clearfix">
+                    <a href="{:U('book/index')}" title="全部" <if condition="$tag eq ''">class="current"</if>>全部</a>
+                    <volist name="hot_tags" id="val">
+                    <a href="{:U('book/index',array('tag'=>$val))}" title="{$tag}" <if condition="$tag eq $val">class="current"</if>>{$val}</a>
+                    </volist>
+                </div>
+            </div>
+            <include file="public:waterfall" />
+        </div>
+        <present name="show_load">
+        <div id="J_wall_loading" class="wall_loading tc gray"><span>加载中...</span></div>
+        </present>
+        <present name="page_bar">
+        <div id="J_wall_page" class="wall_page" <present name="show_page">style="display:block;"</present>>
+            <div class="page_bar">{$page_bar}</div>
+        </div>
+        </present>
+    </div>
+
+</div>
+<include file="public:footer" />
+</body>
+</html>

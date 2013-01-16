@@ -1,0 +1,3 @@
+<?php
+//000000003600a:4:{i:0;a:7:{s:2:"id";s:1:"7";s:4:"name";s:9:"沃礼品";s:3:"img";s:0:"";s:3:"url";s:23:"http://www.wowlipin.com";s:7:"cate_id";s:1:"2";s:5:"ordid";s:1:"1";s:6:"status";s:1:"1";}i:1;a:7:{s:2:"id";s:1:"2";s:4:"name";s:9:"蘑菇街";s:3:"img";s:0:"";s:3:"url";s:22:"http://www.mogujie.com";s:7:"cate_id";s:1:"1";s:5:"ordid";s:1:"2";s:6:"status";s:1:"1";}i:2;a:7:{s:2:"id";s:1:"6";s:4:"name";s:6:"淘宝";s:3:"img";s:0:"";s:3:"url";s:21:"http://www.taobao.com";s:7:"cate_id";s:1:"1";s:5:"ordid";s:1:"3";s:6:"status";s:1:"1";}i:3;a:7:{s:2:"id";s:1:"4";s:4:"name";s:9:"美丽说";s:3:"img";s:0:"";s:3:"url";s:24:"http://www.meilishuo.com";s:7:"cate_id";s:1:"1";s:5:"ordid";s:1:"5";s:6:"status";s:1:"1";}}
+?>

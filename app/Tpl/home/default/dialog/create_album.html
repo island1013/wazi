@@ -1,0 +1,39 @@
+<div class="dialog_create_album clearfix">
+    <form id="J_album_form" action="{:U('album/create_album')}" method="post">
+	<dl>
+        <dt>专辑名：</dt>
+        <dd><input type="text" id="J_album_title" class="input_text album_title" name="title" value=""></dd>
+    </dl>
+    <dl>
+        <dt>分类：</dt>
+        <dd>
+            <select name="cate_id">
+                <volist name="cate_list" id="cate">
+                <option value="{$cate.id}">{$cate.name}</option>
+                </volist>
+            </select>
+        </dd>
+    </dl>
+    <dl>
+        <dt>简介：</dt>
+        <dd><textarea class="input_text album_intro" name="intro"></textarea></dd>
+    </dl>
+    <dl>
+        <dt>专辑封面：</dt>
+        <dd>
+            <div class="clearfix">
+                <div id="J_upload_banner" class="upload_btn"><span>上传图片</span></div>
+            </div>
+            <div class="upload_show">
+                <p class="gray">好的封面会让你的专辑更显品质，建议尺寸960x130</p>
+                <p class="J_preview banner_preview"></p>
+            </div>
+        </dd>
+    </dl>
+    <dl>
+        <dt></dt>
+        <dd><input type="submit" class="btn" value="确定"></dd>
+    </dl>
+    <input type="hidden" id="J_banner" name="banner" value="" />
+    </form>
+</div>

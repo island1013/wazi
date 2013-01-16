@@ -1,0 +1,161 @@
+<include file="public:header" />
+<!--阿里妈妈筛选采集-->
+<div class="subnav">
+    <h1 class="title_2 line_x">{:L('tbk_item_collect')}</h1>
+</div>
+<div class="pad_lr_10" >
+    <form id="J_alimama_form" name="searchform" method="get" >
+    <table width="100%" cellspacing="0" class="table_form">
+        <tbody>
+            <tr>
+                <th width="150">{:L('tbk_item_cate')}：</th>
+                <td>
+                    <select name="cid">
+                        <option value="0">--{:L('all')}--</option>
+                        <volist name="item_cate" id="cate">
+                        <option value="{$cate.cid}">{$cate.name}</option>
+                        </volist>
+                    </select>
+                    <span class="gray ml10">{:L('tbk_item_cate_desc')}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_item_price')}：</th>
+                <td>
+                    <input type="text" name="start_price" size="8" class="input-text" /> - 
+                    <input type="text" name="end_price" size="8" class="input-text" /> 元 
+                    <span class="gray ml10">{:L('tbk_item_price_desc')}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_item_commission_rate')}：</th>
+                <td>
+                    <input type="text" name="start_commissionRate" size="5" class="input-text" /> % - 
+                    <input type="text" name="end_commissionRate" size="5" class="input-text" /> % 
+                    <span class="gray ml10">{:L('tbk_item_commission_rate_desc')}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_item_commission_num')}：</th>
+                <td>
+                    <input type="text" name="start_commissionNum" size="8" class="input-text" /> - 
+                    <input type="text" name="end_commissionNum" size="8" class="input-text" /> 
+                    <span class="gray ml10">{:L('tbk_item_commission_num_desc')}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_item_volume')}：</th>
+                <td>
+                    <input type="text" name="start_totalnum" size="8" class="input-text" /> - 
+                    <input type="text" name="end_totalnum" size="8" class="input-text" />
+                    <span class="gray ml10">{:L('tbk_item_volume_desc')}</span>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_seller_credit')}：</th>
+                <td>
+                    <select name="start_credit">
+                        <option value="1heart">{:L('n1')}{:L('heart')}</option>
+                        <option value="2heart">{:L('n2')}{:L('heart')}</option>
+                        <option value="3heart">{:L('n3')}{:L('heart')}</option>
+                        <option value="4heart">{:L('n4')}{:L('heart')}</option>
+                        <option value="5heart">{:L('n5')}{:L('heart')}</option>
+                        <option value="1diamond">{:L('n1')}{:L('diamond')}</option>
+                        <option value="2diamond">{:L('n2')}{:L('diamond')}</option>
+                        <option value="3diamond">{:L('n3')}{:L('diamond')}</option>
+                        <option value="4diamond">{:L('n4')}{:L('diamond')}</option>
+                        <option value="5diamond">{:L('n5')}{:L('diamond')}</option>
+                        <option value="1crown">{:L('n1')}{:L('crown')}</option>
+                        <option value="2crown">{:L('n2')}{:L('crown')}</option>
+                        <option value="3crown">{:L('n3')}{:L('crown')}</option>
+                        <option value="4crown">{:L('n4')}{:L('crown')}</option>
+                        <option value="5crown">{:L('n5')}{:L('crown')}</option>
+                        <option value="1goldencrown">{:L('n1')}{:L('goldencrown')}</option>
+                        <option value="2goldencrown">{:L('n2')}{:L('goldencrown')}</option>
+                        <option value="3goldencrown">{:L('n3')}{:L('goldencrown')}</option>
+                        <option value="4goldencrown">{:L('n4')}{:L('goldencrown')}</option>
+                        <option value="5goldencrown">{:L('n5')}{:L('goldencrown')}</option>
+                    </select>
+                     - 
+                    <select name="end_credit">
+                        <option value="1heart">{:L('n1')}{:L('heart')}</option>
+                        <option value="2heart">{:L('n2')}{:L('heart')}</option>
+                        <option value="3heart">{:L('n3')}{:L('heart')}</option>
+                        <option value="4heart">{:L('n4')}{:L('heart')}</option>
+                        <option value="5heart">{:L('n5')}{:L('heart')}</option>
+                        <option value="1diamond">{:L('n1')}{:L('diamond')}</option>
+                        <option value="2diamond">{:L('n2')}{:L('diamond')}</option>
+                        <option value="3diamond">{:L('n3')}{:L('diamond')}</option>
+                        <option value="4diamond">{:L('n4')}{:L('diamond')}</option>
+                        <option value="5diamond">{:L('n5')}{:L('diamond')}</option>
+                        <option value="1crown">{:L('n1')}{:L('crown')}</option>
+                        <option value="2crown">{:L('n2')}{:L('crown')}</option>
+                        <option value="3crown">{:L('n3')}{:L('crown')}</option>
+                        <option value="4crown">{:L('n4')}{:L('crown')}</option>
+                        <option value="5crown">{:L('n5')}{:L('crown')}</option>
+                        <option value="1goldencrown">{:L('n1')}{:L('goldencrown')}</option>
+                        <option value="2goldencrown">{:L('n2')}{:L('goldencrown')}</option>
+                        <option value="3goldencrown">{:L('n3')}{:L('goldencrown')}</option>
+                        <option value="4goldencrown">{:L('n4')}{:L('goldencrown')}</option>
+                        <option value="5goldencrown" selected>{:L('n5')}{:L('goldencrown')}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_item_from')}：</th>
+                <td>
+                    <label><input type="radio" name="mall_item" value="0" checked> {:L('nolimit')}</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="mall_item" value="1"> {:L('tmall')}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_guarantee')}：</th>
+                <td>
+                    <label><input type="radio" name="guarantee" value="0" checked> {:L('nolimit')}</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="guarantee" value="1"> {:L('support')}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_sevendays_return')}：</th>
+                <td>
+                    <label><input type="radio" name="sevendays_return" value="0" checked> {:L('nolimit')}</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="sevendays_return" value="1"> {:L('support')}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_real_describe')}：</th>
+                <td>
+                    <label><input type="radio" name="real_describe" value="0" checked> {:L('nolimit')}</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="real_describe" value="1"> {:L('yes')}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('tbk_cash_coupon')}：</th>
+                <td>
+                    <label><input type="radio" name="cash_coupon" value="0" checked> {:L('nolimit')}</label>&nbsp;&nbsp;
+                    <label><input type="radio" name="cash_coupon" value="1"> {:L('support')}</label>
+                </td>
+            </tr>
+            <tr>
+                <th>{:L('keyword')}：</th>
+                <td>
+                    <input name="keyword" type="text" class="input-text" size="40" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="hidden" name="g" value="admin" />
+                    <input type="hidden" name="m" value="collect_alimama" />
+                    <input type="hidden" name="a" value="search" />
+                    <input type="submit" name="search" class="btn btn_submit mr10" value="{:L('search_filter')}" />
+                    <input type="button" name="import" class="J_showdialog btn" value="{:L('import_db')}" data-uri="{:U('collect_alimama/batch_publish')}" data-id="batch_publish" data-title="{:L('import_db')}" data-width="450" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+</div>
+<include file="public:footer" />
+</body>
+</html>
